@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tiệm Hoa Của Đức · Chúc Mừng 20/10</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #f7f3eb;
+      --text-green: #3c4f41;
+      --text-muted: #768274;
+      --accent-pink: #d45072;
+      --accent-pink-light: #f3a6bb;
+      --card-bg: #fbf8f3;
+      --line-color: #d8cfc0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-green);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .highlight-script {
+      font-family: 'Dancing Script', cursive;
+      color: var(--accent-pink);
+      font-weight: 700;
+    }
+
+    /* =========================================
+       NÚT TRÒN RESTART GÓC DƯỚI BÊN PHẢI (XUYÊN SUỐT TỪ ĐẦU ĐẾN CUỐI)
+    ========================================= */
+    .btn-restart-fixed {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1.5px solid #e4d8c8;
+      background-color: #fffdf9;
+      color: var(--accent-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 6px 18px rgba(60, 79, 65, 0.16);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn-restart-fixed:hover {
+      background-color: var(--accent-pink);
+      color: #ffffff;
+      border-color: var(--accent-pink);
+      transform: rotate(-180deg) scale(1.08);
+    }
+
+    .btn-restart-fixed svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+    }
+
+    /* =========================================
+       HIỆU ỨNG GIÓ: HOA & LÁ BAY TỪ TRÊN-PHẢI XUỐNG DƯỚI-TRÁI
+    ========================================= */
+    #wind {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    #wind i {
+      position: absolute;
+      width: var(--s);
+      height: var(--s);
+      border-radius: 0 100% 0 100%;
+      animation: flyWind var(--d) linear infinite;
+      opacity: 0;
+    }
+
+    #wind i.petal {
+      background: linear-gradient(135deg, #f59bb2, #de5d81);
+      box-shadow: 0 2px 4px rgba(212, 80, 114, 0.15);
+    }
+
+    #wind i.leaf {
+      background: linear-gradient(135deg, #98bf82, #6d965a);
+      border-radius: 5% 95% 5% 95%;
+    }
+
+    @keyframes flyWind {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }
+      10%, 88% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: translate(-95vw, 105vh) rotate(-580deg) scale(1.05);
+        opacity: 0;
+      }
+    }
+
+    .sway {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: GentleSway 3.6s ease-in-out infinite;
+    }
+
+    @keyframes GentleSway {
+      0%, 100% { transform: rotate(-1.5deg); }
+      50% { transform: rotate(-7.5deg); }
+    }
+
+    /* =========================================
+       QUẢN LÝ CÁC MÀN HÌNH (SCREENS)
+    ========================================= */
+    .scr {
+      display: none;
+      min-height: 100svh;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 2.2rem 5%;
+      position: relative;
+      z-index: 10;
+      animation: fadeInScreen 0.7s ease both;
+    }
+
+    .scr.on {
+      display: flex;
+    }
+
+    .scr.out {
+      position: fixed;
+      inset: 0;
+      z-index: 8;
+      background: var(--bg-cream);
+      opacity: 0;
+      transition: opacity 0.65s ease;
+      pointer-events: none;
+      animation: none;
+    }
+
+    @keyframes fadeInScreen {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* =========================================
+       GIAO DIỆN 1: TIỆM HOA (TO THEO TỶ LỆ, ĐỈNH CHẠM NGANG CHỮ TRÁI)
+    ========================================= */
+    .s1-grid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1180px;
+      gap: 2.5rem;
+    }
+
+    .s1-left {
+      flex: 0.95;
+      max-width: 460px;
+      padding-top: 0.2rem;
+    }
+
+    .s1-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line-color);
+      margin-bottom: 1.8rem;
+      font-weight: 500;
+    }
+
+    .s1-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+      line-height: 1.15;
+      font-weight: 600;
+      color: var(--text-green);
+      margin-bottom: 1.8rem;
+    }
+
+    .s1-title .highlight-script {
+      font-size: 1.14em;
+      display: block;
+      margin: 0.08rem 0;
+    }
+
+    .s1-sub {
+      font-size: 0.76rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .s1-scroll-hint {
+      display: none;
+      margin-top: 2.2rem;
+      font-size: 0.88rem;
+      color: var(--accent-pink);
+      font-weight: 500;
+      animation: bobHint 2s ease-in-out infinite;
+    }
+
+    .s1-right {
+      flex: 1.25;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .shop-stage {
+      width: 100%;
+      max-width: 590px;
+      position: relative;
+      border-radius: 16px;
+    }
+
+    .shop-stage svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Cánh cửa mở lùi vào bên trong tiệm hoa (Không phóng to ngôi nhà) */
+    #door-leaf {
+      transform-origin: 256px 264px;
+      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), filter 0.85s ease;
+      cursor: pointer;
+    }
+
+    .shop-stage.opening #door-leaf {
+      transform: scaleX(0.18) skewY(-16deg);
+      filter: brightness(0.8);
+    }
+
+    .door-hitbox-btn {
+      position: absolute;
+      left: 54.5%;
+      top: 47%;
+      width: 21%;
+      height: 46%;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 15;
+      border-radius: 4px;
+    }
+
+    .door-hitbox-btn:hover ~ svg #door-leaf {
+      filter: brightness(1.06);
+    }
+
+    .door-hitbox-btn:focus-visible {
+      outline: 2px dashed var(--accent-pink);
+    }
+
+    .click-door-hint {
+      margin-top: 0.9rem;
+      padding: 0.78rem 1.8rem;
+      border: 1px solid var(--line-color);
+      border-radius: 10px;
+      background: #fffdf8;
+      color: var(--text-green);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.96rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      animation: bobHint 2.4s ease-in-out infinite;
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .click-door-hint:hover {
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+
+    @keyframes bobHint {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @media (max-width: 768px) {
+      #s1 {
+        padding: 0 1.4rem 3.5rem;
+      }
+      .s1-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .s1-left {
+        min-height: 88svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .s1-scroll-hint {
+        display: block;
+      }
+      .s1-right {
+        min-height: 76svh;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    /* =========================================
+       GIAO DIỆN 2: CHỌN HOA CẮM VÀO BÓ
+    ========================================= */
+    .s2-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 1040px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      color: var(--text-green);
+      line-height: 1.22;
+      font-weight: 600;
+    }
+
+    .section-title .highlight-script {
+      font-size: 1.15em;
+      margin-left: 4px;
+    }
+
+    .section-lead {
+      max-width: 520px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0.75rem auto 2rem;
+    }
+
+    .s2-row {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 3rem;
+      width: 100%;
+      align-items: end;
+    }
+
+    .shelf-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .shelf {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: clamp(6px, 1.5vw, 16px);
+      width: 100%;
+      align-items: end;
+      padding: 0 8px 12px;
+      border-bottom: 7px solid #cbb292;
+      border-radius: 3px;
+    }
+
+    .fl-btn {
+      background: none;
+      border: none;
+      padding: 4px 2px;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      cursor: pointer;
+      transition: transform 0.25s ease, opacity 0.35s ease, filter 0.35s ease;
+    }
+
+    .fl-btn:hover {
+      transform: translateY(-7px);
+    }
+
+    .fl-btn svg {
+      width: clamp(52px, 11vw, 84px);
+      height: auto;
+      overflow: visible;
+      margin-bottom: 14px;
+      transform: translateY(-6px);
+    }
+
+    .fl-btn span {
+      font-size: 0.79rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .fl-btn.sel {
+      opacity: 0.3;
+      filter: grayscale(0.45);
+    }
+
+    .fl-btn.sel:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Bó hoa bên phải */
+    .bouquet-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bq-svg {
+      width: min(74vw, 315px);
+      height: auto;
+      overflow: visible;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .grow {
+      animation: growInBouquet 0.6s cubic-bezier(0.2, 0.85, 0.3, 1) both;
+    }
+
+    @keyframes growInBouquet {
+      from {
+        transform: translateY(85px) scale(0.35);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .pull {
+      animation: pullOutBouquet 0.42s ease-in forwards;
+    }
+
+    @keyframes pullOutBouquet {
+      to {
+        transform: translateY(-85px) scale(0.4);
+        opacity: 0;
+      }
+    }
+
+    .bq-status {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      min-height: 1.5em;
+    }
+
+    .btn-primary {
+      margin-top: 1.4rem;
+      background-color: var(--accent-pink);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.8rem 2.2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(212, 80, 114, 0.28);
+      transition: opacity 0.3s, transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .btn-primary:not(:disabled):hover {
+      background-color: #be3f60;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 820px) {
+      .s2-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* =========================================
+       GIAO DIỆN 3: BÓ HOA TO HƠN & DẢI RUY BĂNG UỐN LƯỢN MỀM MẠI
+    ========================================= */
+    .s3-hold {
+      position: relative;
+      width: min(88vw, 430px);
+      margin: 1rem auto 0.5rem;
+    }
+
+    .s3-hold .bq-svg {
+      width: 100%;
+    }
+
+    .ribbon-band {
+      position: absolute;
+      left: 50%;
+      top: 67.5%;
+      width: 68%;
+      height: 16%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 12;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .ribbon-band.gone {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.35);
+      pointer-events: none;
+    }
+
+    .wavy-ribbon-svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+      filter: drop-shadow(0 4px 8px rgba(212, 80, 114, 0.32));
+      animation: floatRibbon 2.2s ease-in-out infinite;
+    }
+
+    .ribbon-band:hover .wavy-ribbon-svg {
+      filter: drop-shadow(0 6px 12px rgba(212, 80, 114, 0.5));
+      transform: scale(1.04);
+    }
+
+    @keyframes floatRibbon {
+      0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+      50% { transform: translateY(-3px) rotate(1deg); }
+    }
+
+    .final-bow {
+      position: absolute;
+      left: 50%;
+      top: 66.5%;
+      width: 34%;
+      transform: translateX(-50%) scale(0);
+      transition: transform 0.65s cubic-bezier(0.3, 1.6, 0.5, 1);
+      z-index: 14;
+      pointer-events: none;
+    }
+
+    .final-bow.on {
+      transform: translateX(-50%) scale(1);
+    }
+
+    .mini-tag {
+      position: absolute;
+      left: 55%;
+      top: 68%;
+      width: 42%;
+      background: #fffdf9;
+      color: var(--text-green);
+      border: 1px solid #ece3d5;
+      border-radius: 8px;
+      padding: 12px 8px 10px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: rotate(6deg) scale(0);
+      transform-origin: 0 0;
+      transition: transform 0.65s 0.4s cubic-bezier(0.3, 1.5, 0.5, 1);
+      z-index: 16;
+    }
+
+    .mini-tag::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -14px;
+      width: 24px;
+      height: 14px;
+      border-top: 2px solid var(--accent-pink);
+      border-left: 2px solid var(--accent-pink);
+      border-radius: 10px 0 0 0;
+    }
+
+    .mini-tag.on {
+      transform: rotate(6deg) scale(1);
+    }
+
+    .mini-tag-hole {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #d5cbb8;
+      margin: 0 auto 4px;
+    }
+
+    .mini-tag p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.12rem;
+      margin: 0 0 8px;
+      line-height: 1.2;
+      color: var(--text-green);
+    }
+
+    .mini-tag button {
+      background: var(--accent-pink);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      padding: 5px 14px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(212, 80, 114, 0.35);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .mini-tag button:hover {
+      background: #be3f60;
+      transform: scale(1.06);
+    }
+
+    /* =========================================
+       GIAO DIỆN 4: BỨC THƯ CHÚC MỪNG & 13 ẢNH NGƯỜI THÂN
+    ========================================= */
+    #letter-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background-color: rgba(247, 243, 235, 0.94);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      animation: fadeInScreen 0.45s ease both;
+    }
+
+    #letter-modal.on {
+      display: flex;
+    }
+
+    .letter-card {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid #e6decb;
+      border-radius: 18px;
+      max-width: 960px;
+      width: 100%;
+      max-height: 92svh;
+      overflow-y: auto;
+      padding: 2.6rem clamp(1.4rem, 4vw, 3rem) 2.2rem;
+      box-shadow: 0 20px 55px rgba(60, 79, 65, 0.14);
+      animation: letterRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes letterRise {
+      from {
+        transform: translateY(28px) scale(0.96);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .btn-close-modal {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: #efe9de;
+      color: var(--text-green);
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .btn-close-modal:hover {
+      background: #e2d8c7;
+    }
+
+    .letter-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 1.15fr;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .letter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.8vw, 1.85rem);
+      color: var(--accent-pink);
+      font-style: italic;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      line-height: 1.32;
+    }
+
+    .letter-content p {
+      font-size: 0.96rem;
+      line-height: 1.82;
+      color: #465448;
+      margin-bottom: 1.05rem;
+    }
+
+    /* Khung trưng bày 13 bức ảnh của 13 người thân */
+    .roommates-board {
+      background: #ffffff;
+      padding: 16px 12px 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      border: 1px solid #ede6da;
+      text-align: center;
+    }
+
+    .photos-grid-13 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .mini-polaroid {
+      position: relative;
+      width: calc(25% - 6px);
+      background: #fdfbf7;
+      padding: 4px 4px 6px;
+      border-radius: 6px;
+      border: 1px solid #e8e0d2;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .mini-polaroid:nth-child(odd) {
+      transform: rotate(-1.8deg);
+    }
+
+    .mini-polaroid:nth-child(even) {
+      transform: rotate(1.8deg);
+    }
+
+    .mini-polaroid:hover {
+      transform: scale(1.14) rotate(0deg);
+      z-index: 20;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .mini-polaroid img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      background: #f2ece1;
+    }
+
+    /* Nhãn hiển thị tên từng người khi rê chuột vào mỗi bức ảnh */
+    .member-name-tooltip {
+      position: absolute;
+      bottom: calc(100% + 7px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background-color: var(--accent-pink);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      box-shadow: 0 4px 12px rgba(212, 80, 114, 0.35);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      z-index: 30;
+    }
+
+    .member-name-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: var(--accent-pink) transparent transparent transparent;
+    }
+
+    .mini-polaroid:hover .member-name-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .board-caption {
+      margin-top: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .letter-sign {
+      margin-top: 1.1rem;
+      text-align: right;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.95rem;
+      color: var(--accent-pink);
+    }
+
+    /* =========================================
+       MODAL PHÓNG TO ẢNH KÈM VÒNG HOA NỞ HÌNH TRÁI TIM
+    ========================================= */
+    #photo-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(34, 42, 36, 0.78);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      animation: fadeInScreen 0.35s ease both;
+    }
+
+    #photo-lightbox.on {
+      display: flex;
+    }
+
+    /* Nút đóng góc trên bên phải cho giao diện điện thoại (và hỗ trợ cả máy tính) */
+    .lightbox-close-btn {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      background: rgba(255, 253, 249, 0.92);
+      color: var(--accent-pink);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 320;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .lightbox-close-btn:hover {
+      transform: scale(1.08);
+      background: #ffffff;
+    }
+
+    .lightbox-stage {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 540px;
+      width: 100%;
+      animation: zoomCardIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes zoomCardIn {
+      from {
+        transform: scale(0.82);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Vùng chứa ảnh gốc và vòng hoa hình trái tim nở xung quanh */
+    .floral-frame-box {
+      position: relative;
+      width: min(88vw, 480px);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Khung ảnh nằm gọn bên trong lòng trái tim hoa (bo mềm 2 góc dưới theo dáng tim để không lòi góc vuông) */
+    .enlarged-photo-wrap {
+      width: 56%;
+      height: 56%;
+      transform: translateY(-4.5%);
+      background: #fffdf9;
+      padding: 6px;
+      border-radius: 44px 44px 47% 47%;
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.32);
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .enlarged-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 39px 39px 46% 46%;
+      display: block;
+    }
+
+    /* Lớp SVG hoa nở xung quanh tạo thành hình trái tim */
+    .floral-border-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 4;
+      overflow: visible;
+    }
+
+    /* Hiệu ứng từng bông hoa và chiếc lá nở bung ra khi mở bức ảnh to */
+    .bloom-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      opacity: 0;
+      animation: flowerBloomOut 0.72s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes flowerBloomOut {
+      0% {
+        transform: scale(0) rotate(-35deg);
+        opacity: 0;
+      }
+      65% {
+        transform: scale(1.12) rotate(5deg);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    /* Tên người thân chính giữa bên dưới khung ảnh dùng font cách điệu đỏ hồng */
+    .enlarged-person-name {
+      margin-top: 0.25rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.1rem, 5vw, 2.75rem);
+      font-weight: 700;
+      color: var(--accent-pink);
+      text-align: center;
+      background: rgba(255, 253, 249, 0.95);
+      padding: 0.25rem 1.8rem 0.35rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+      border: 1px solid #f2dce2;
+      z-index: 5;
+    }
+
+    @media (max-width: 780px) {
+      .letter-layout {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+      }
+      .mini-polaroid {
+        width: calc(25% - 6px);
+      }
+    }
+
+    @media (max-width: 460px) {
+      .mini-polaroid {
+        width: calc(33.33% - 6px);
+      }
+      .floral-frame-box {
+        width: 94vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Kho lưu trữ Symbol 5 loài hoa & Đầu bông hoa trang trí khung ảnh -->
+  <svg width="0" height="0" style="position:absolute; pointer-events:none;" aria-hidden="true">
+    <defs id="flower-defs"></defs>
+    <defs id="wreath-defs">
+      <!-- Bông hoa hồng nhiều lớp -->
+      <symbol id="w-rose" viewBox="-28 -28 56 56">
+        <circle cx="0" cy="0" r="24" fill="#d93e75"/>
+        <circle cx="-4" cy="-3" r="18" fill="#ee6a98"/>
+        <circle cx="4" cy="3" r="16" fill="#c93066"/>
+        <path d="M-11 -3 a11 11 0 0 1 22 0 a7 7 0 0 1 -14 2 a3.5 3.5 0 0 1 6 -2" stroke="#fbb3cb" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Bông hướng dương rực rỡ -->
+      <symbol id="w-sunflower" viewBox="-30 -30 60 60">
+        <g>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#f3b82b"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#e5a61c" transform="rotate(30)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#f3b82b" transform="rotate(60)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#e5a61c" transform="rotate(90)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#f3b82b" transform="rotate(120)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#e5a61c" transform="rotate(150)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#f3b82b" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#e5a61c" transform="rotate(210)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#f3b82b" transform="rotate(240)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#e5a61c" transform="rotate(270)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#f3b82b" transform="rotate(300)"/>
+          <ellipse cx="0" cy="-19" rx="5.5" ry="10" fill="#e5a61c" transform="rotate(330)"/>
+        </g>
+        <circle cx="0" cy="0" r="11" fill="#7a4a24"/>
+        <circle cx="0" cy="0" r="6.5" fill="#5a3418"/>
+      </symbol>
+
+      <!-- Bông cúc trắng nhụy vàng -->
+      <symbol id="w-daisy" viewBox="-26 -26 52 52">
+        <g>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(36)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(108)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(180)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(252)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(288)"/>
+          <ellipse cx="0" cy="-15" rx="4.8" ry="9.5" fill="#ffffff" stroke="#e5dcc8" stroke-width="0.8" transform="rotate(324)"/>
+        </g>
+        <circle cx="0" cy="0" r="7.5" fill="#f3b82b"/>
+      </symbol>
+
+      <!-- Bông Tulip hồng đào -->
+      <symbol id="w-tulip" viewBox="-24 -26 48 52">
+        <path d="M-16 -14 Q-18 18 0 22 Q18 18 16 -14 L7 -2 L0 -20 L-7 -2 Z" fill="#e65c88"/>
+        <path d="M0 -20 L-7 -2 Q-4 15 0 22 Q4 15 7 -2 Z" fill="#f79bb9"/>
+      </symbol>
+
+      <!-- Chùm hoa Baby trắng & nụ hồng nhỏ -->
+      <symbol id="w-baby" viewBox="-24 -24 48 48">
+        <circle cx="-10" cy="-8" r="5" fill="#ffffff" stroke="#e2d9c5"/>
+        <circle cx="-10" cy="-8" r="1.6" fill="#ecc454"/>
+        <circle cx="10" cy="-6" r="4.5" fill="#ffffff" stroke="#e2d9c5"/>
+        <circle cx="10" cy="-6" r="1.5" fill="#ecc454"/>
+        <circle cx="0" cy="9" r="5" fill="#ffffff" stroke="#e2d9c5"/>
+        <circle cx="0" cy="9" r="1.6" fill="#ecc454"/>
+        <circle cx="0" cy="-3" r="4" fill="#f7a8c0"/>
+      </symbol>
+
+      <!-- Cặp lá xanh -->
+      <symbol id="w-leaf" viewBox="-26 -18 52 36">
+        <path d="M0 4 Q-18 -2 -22 -14 Q-4 -12 0 4 Z" fill="#6f9e60"/>
+        <path d="M0 4 Q18 -2 22 -14 Q4 -12 0 4 Z" fill="#84b374"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Hiệu ứng cánh hoa và lá bay trong gió từ góc trên bên phải xuống góc dưới bên trái -->
+  <div id="wind" aria-hidden="true"></div>
+
+  <!-- Nút hình tròn ở góc phải bên dưới dùng để restart lại quá trình (Luôn hiện xuyên suốt từ đầu đến cuối) -->
+  <button type="button" class="btn-restart-fixed" id="btn-restart-all" title="Bắt đầu lại từ đầu" aria-label="Bắt đầu lại từ đầu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+      <path d="M3 3v5h5"/>
+    </svg>
+  </button>
+
+  <!-- =========================================================
+       GIAO DIỆN 1: MÀN HÌNH MỞ ĐẦU - TIỆM HOA CỦA ĐỨC
+  ========================================================== -->
+  <section class="scr on" id="s1">
+    <div class="s1-grid">
+      <!-- Cột trái: Chữ tiêu đề -->
+      <div class="s1-left">
+        <span class="s1-eyebrow">20 THÁNG 10 · MỘT NGÀY THẬT ĐẶC BIỆT</span>
+        <h1 class="s1-title">
+          Tiệm hoa<br />
+          chỉ mở
+          <span class="highlight-script">một ngày</span>
+          trong năm.
+        </h1>
+        <p class="s1-sub">MỘT CHÚT HOA · GỬI ĐẾN NHỮNG NGƯỜI THÂN CỦA ĐỨC</p>
+        <div class="s1-scroll-hint">↓ Cuộn xuống để ghé tiệm hoa nhé ↓</div>
+      </div>
+
+      <!-- Cột phải: Tiệm hoa -->
+      <div class="s1-right">
+        <div class="shop-stage" id="shop-stage">
+          <button type="button" class="door-hitbox-btn" id="door-hitbox-btn" aria-label="Click vào cửa để mở"></button>
+
+          <svg viewBox="36 58 388 294" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="door-opening-clip">
+                <rect x="256" y="198" width="82" height="132" />
+              </clipPath>
+            </defs>
+
+            <ellipse cx="235" cy="340" rx="195" ry="11" fill="#e6dfd3" />
+            <rect x="85" y="110" width="290" height="225" rx="4" fill="#f5eedc" stroke="#e0d6c3" stroke-width="2" />
+            <polygon points="70,112 95,62 365,62 390,112" fill="#b7c69b" />
+            <rect x="85" y="110" width="290" height="8" fill="#9fb082" />
+
+            <!-- Bảng hiệu: TIỆM HOA CỦA ĐỨC -->
+            <rect x="122" y="73" width="216" height="44" rx="4" fill="#fbf8f1" stroke="#d5ccb8" stroke-width="2" />
+            <rect x="126" y="77" width="208" height="36" rx="2" fill="none" stroke="#e5dec9" stroke-width="1" />
+            <text x="230" y="96" text-anchor="middle" font-family="'Playfair Display', serif" font-size="13.5" font-weight="700" fill="#495a4c" letter-spacing="1.5">TIỆM HOA CỦA ĐỨC</text>
+            <text x="230" y="109" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="6.3" fill="#8c9489" letter-spacing="1.8">FLOWERS &amp; LITTLE GOOD WISHES</text>
+
+            <!-- Mái hiên sọc hồng đan xen -->
+            <g>
+              <polygon points="85,120 68,162 105,162 117,120" fill="#dd6183" />
+              <polygon points="117,120 105,162 142,162 149,120" fill="#f3b0c3" />
+              <polygon points="149,120 142,162 179,162 181,120" fill="#dd6183" />
+              <polygon points="181,120 179,162 216,162 213,120" fill="#f3b0c3" />
+              <polygon points="213,120 216,162 253,162 245,120" fill="#dd6183" />
+              <polygon points="245,120 253,162 290,162 277,120" fill="#f3b0c3" />
+              <polygon points="277,120 290,162 327,162 309,120" fill="#dd6183" />
+              <polygon points="309,120 327,162 364,162 341,120" fill="#f3b0c3" />
+              <polygon points="341,120 364,162 392,162 375,120" fill="#dd6183" />
+              <path d="M68,162 Q86,174 105,162 Q123,174 142,162 Q160,174 179,162 Q197,174 216,162 Q234,174 253,162 Q271,174 290,162 Q308,174 327,162 Q345,174 364,162 Q378,174 392,162" fill="#c94b6d" opacity="0.85" />
+            </g>
+
+            <!-- Cửa sổ vòm bên trái -->
+            <g>
+              <path d="M122,235 C122,190 212,190 212,235 L212,292 L122,292 Z" fill="#dce6c7" stroke="#6c8c6d" stroke-width="5" />
+              <line x1="167" y1="201" x2="167" y2="292" stroke="#b8c9a3" stroke-width="2" />
+              <line x1="122" y1="248" x2="212" y2="248" stroke="#b8c9a3" stroke-width="2" />
+              <g class="sway" style="animation-delay: 0.3s">
+                <line x1="142" y1="285" x2="142" y2="265" stroke="#5f8d5a" stroke-width="2.5" />
+                <path d="M135,266 C135,254 149,254 149,266 Z" fill="#e06384" />
+                <line x1="167" y1="285" x2="167" y2="262" stroke="#5f8d5a" stroke-width="2.5" />
+                <circle cx="167" cy="260" r="7" fill="#ffffff" />
+                <circle cx="167" cy="260" r="3" fill="#e6a938" />
+                <line x1="191" y1="285" x2="191" y2="265" stroke="#5f8d5a" stroke-width="2.5" />
+                <circle cx="191" cy="262" r="6.5" fill="#d95276" />
+              </g>
+              <rect x="130" y="282" width="74" height="10" rx="2" fill="#ce8954" />
+              <rect x="115" y="292" width="104" height="7" rx="3" fill="#7c9c77" />
+            </g>
+
+            <!-- KHU VỰC CỬA CHÍNH -->
+            <g id="door-svg-group">
+              <g clip-path="url(#door-opening-clip)">
+                <rect x="256" y="198" width="82" height="132" fill="#4b3a2c" />
+                <circle cx="302" cy="240" r="46" fill="#fbe29d" opacity="0.32" />
+                <polygon points="256,330 278,300 338,300 338,330" fill="#7b5c42" />
+                <line x1="256" y1="330" x2="278" y2="300" stroke="#5a412d" stroke-width="1.5" />
+                <line x1="305" y1="198" x2="305" y2="215" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M296,220 Q305,209 314,220 Z" fill="#f9e699" />
+                <text x="303" y="268" text-anchor="middle" font-family="'Dancing Script', cursive" font-size="16" fill="#fff8e7">Mời vào</text>
+
+                <g id="door-leaf">
+                  <rect x="256" y="198" width="82" height="132" fill="#638c68" stroke="#4d7352" stroke-width="2" />
+                  <path d="M268,225 C268,205 326,205 326,225 L326,268 L268,268 Z" fill="#d9e5c9" stroke="#517856" stroke-width="3" />
+                  <rect x="268" y="278" width="58" height="40" fill="#59805e" stroke="#4a6e4e" stroke-width="2" />
+                  <polyline points="286,238 297,227 308,238" fill="none" stroke="#8c7a65" stroke-width="1.5" />
+                  <rect x="276" y="238" width="42" height="20" rx="3" fill="#fcfaf5" stroke="#d5cbb8" stroke-width="1.5" />
+                  <text x="297" y="252" text-anchor="middle" font-family="'Playfair Display', serif" font-size="9.5" font-weight="700" fill="#495a4c" letter-spacing="1">OPEN</text>
+                  <circle cx="330" cy="273" r="4" fill="#dfc15d" />
+                </g>
+              </g>
+
+              <rect x="253" y="195" width="88" height="135" rx="3" fill="none" stroke="#537d59" stroke-width="6" />
+            </g>
+
+            <!-- Chuông nhỏ góc trên cửa -->
+            <g transform="translate(335, 198)">
+              <path d="M0,0 Q8,-5 12,4 L-4,4 Z" fill="#d9b44a" />
+              <circle cx="4" cy="6" r="2.5" fill="#b38f29" />
+            </g>
+
+            <rect x="245" y="328" width="104" height="7" rx="2" fill="#dfd5c0" />
+            <rect x="238" y="334" width="118" height="6" rx="2" fill="#cfc3ab" />
+
+            <!-- Chậu hoa bên trái tiệm -->
+            <g>
+              <g class="sway">
+                <use href="#f-sunflower" x="34" y="192" width="44" height="102" />
+                <use href="#f-daisy" x="64" y="208" width="38" height="88" />
+                <use href="#f-tulip" x="48" y="212" width="38" height="85" />
+              </g>
+              <polygon points="46,285 92,285 85,335 53,335" fill="#c87d4b" />
+              <rect x="43" y="280" width="52" height="8" rx="2" fill="#b86d3b" />
+            </g>
+
+            <!-- Chậu hoa bên phải tiệm -->
+            <g>
+              <g class="sway" style="animation-delay: 0.7s">
+                <use href="#f-rose" x="372" y="208" width="42" height="96" />
+                <use href="#f-baby" x="388" y="218" width="36" height="84" />
+              </g>
+              <polygon points="376,296 420,296 414,338 382,338" fill="#9eb586" />
+              <rect x="373" y="291" width="50" height="7" rx="2" fill="#8ca374" />
+            </g>
+          </svg>
+        </div>
+
+        <button type="button" class="click-door-hint" id="hint-door-btn">
+          Click vào cửa để mở nhé
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GIAO DIỆN 2: CHỌN HOA CẮM VÀO BÓ
+  ========================================================== -->
+  <section class="scr" id="s2">
+    <div class="s2-container">
+      <h2 class="section-title">
+        Mọi người chọn hoa nhé,<br />
+        Đức gửi <span class="highlight-script">lời chúc.</span>
+      </h2>
+      <p class="section-lead">
+        Chạm từng bông hoa để đặt vào bó, chạm lần nữa vào đúng bông đã chọn để rút hoa ra. Chọn ít nhất 1 loài hoa để nhận bó hoa nhé!
+      </p>
+
+      <div class="s2-row">
+        <!-- Kệ 5 loài hoa bên trái -->
+        <div class="shelf-wrap">
+          <div class="shelf" id="shelf"></div>
+        </div>
+
+        <!-- Bó hoa bên phải -->
+        <div class="bouquet-col">
+          <div id="bq-wrap"></div>
+          <p class="bq-status" id="bq-status">Bó hoa đang chờ những điều dịu dàng.</p>
+        </div>
+      </div>
+
+      <button type="button" class="btn-primary" id="btn-get-bouquet" disabled>
+        Nhận bó hoa ✨
+      </button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GIAO DIỆN 3: THẮT NƠ & HIỆN THIỆP NHỎ CẠNH NƠ
+  ========================================================== -->
+  <section class="scr" id="s3" style="opacity: 0">
+    <div class="s2-container">
+      <h2 class="section-title" id="s3-title">
+        Thắt một chiếc nơ,<br />
+        gửi trọn <span class="highlight-script">niềm vui.</span>
+      </h2>
+
+      <div class="s3-hold" id="s3-hold">
+        <!-- Dải ruy băng lụa uốn lượn bay bổng -->
+        <div class="ribbon-band" id="ribbon-band" role="button" tabindex="0" aria-label="Chạm vào dải ruy băng để hoàn thành bó hoa">
+          <svg class="wavy-ribbon-svg" viewBox="0 0 240 54">
+            <path d="M8 36 C32 10, 62 46, 92 26" stroke="#f07b9b" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M148 26 C178 6, 208 42, 232 18" stroke="#f07b9b" stroke-width="9" fill="none" stroke-linecap="round"/>
+            <path d="M45 28 C85 16, 155 38, 195 24" stroke="#d45072" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <path d="M48 28 C85 17, 155 37, 192 24" stroke="#f9b4c7" stroke-width="2" stroke-dasharray="5 4" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Chiếc nơ hoàn chỉnh sắc nét -->
+        <svg class="final-bow" id="final-bow" viewBox="0 0 120 70">
+          <path d="M60 38C40 8 8 6 10 30c2 22 34 14 50 8z" fill="#e0527d"/>
+          <path d="M60 38C80 8 112 6 110 30c-2 22-34 14-50 8z" fill="#e0527d"/>
+          <path d="M60 38C44 22 24 20 22 30M60 38c16-16 36-18 38-8" stroke="#f58aac" stroke-width="3" fill="none"/>
+          <path d="M56 40L38 68l14-6 6 6zM64 40l18 28-14-6-6 6z" fill="#c63a68"/>
+          <rect x="50" y="28" width="20" height="18" rx="7" fill="#d4456f"/>
+        </svg>
+
+        <!-- Tấm thiệp nhỏ hiện ra ngay bên phải chiếc nơ -->
+        <div class="mini-tag" id="mini-tag">
+          <div class="mini-tag-hole"></div>
+          <p>Gửi đến người thân<br />của Đức</p>
+          <button type="button" id="btn-open-letter">MỞ THIỆP</button>
+        </div>
+      </div>
+
+      <p class="bq-status" id="s3-hint">Chạm vào dải ruy băng để hoàn thành bó hoa.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       GIAO DIỆN 4: BỨC THƯ CHÚC MỪNG 20/10 & 13 ẢNH NGƯỜI THÂN
+  ========================================================== -->
+  <div id="letter-modal" role="dialog" aria-modal="true">
+    <div class="letter-card">
+      <button type="button" class="btn-close-modal" id="btn-close-letter" aria-label="Đóng thiệp">×</button>
+
+      <div class="letter-layout">
+        <!-- Cột trái: Nội dung bức thư -->
+        <div class="letter-content">
+          <h3 class="letter-title">Gửi những người phụ nữ thân yêu của gia đình 🌷</h3>
+
+          <p>Chúc mừng ngày Phụ nữ Việt Nam 20/10 đến Bà Vân, Mẹ Thắm, Mự Hiền, Mự Giang, Em Hoa, Em Milk, Bà Dung, Dì Thủy, Mự Bích, Chị Hằng, Chị Chi, Chị Ngọc và Bạn Vân! Chúc mọi người luôn xinh đẹp, rạng rỡ và tràn đầy niềm vui trong cuộc sống! 💗</p>
+
+          <p>Nhân một ngày thật đặc biệt, Đức muốn gửi tặng mọi người một bó hoa nhỏ. Mỗi bông hoa là một lời chúc tốt đẹp mà mình mong dành đến những người thân yêu: luôn mạnh khỏe, bình an, ngập tràn hạnh phúc; học tập và công việc đều thuận lợi, mọi điều mong ước đều sớm thành hiện thực. Mong rằng mỗi ngày của mọi người đều có thêm thật nhiều tiếng cười, những niềm vui giản dị và những điều tốt đẹp. Chúc tất cả mọi người có một ngày 20/10 thật ý nghĩa, luôn được yêu thương và gặp nhiều may mắn! 🌸</p>
+        </div>
+
+        <!-- Cột phải: Khung 13 bức ảnh của 13 người thân (hinh01.jpg -> hinh13.jpg) -->
+        <div class="roommates-board">
+          <div class="photos-grid-13" id="photos-grid-13"></div>
+          <p class="board-caption">
+            Những bông hoa rực rỡ nhất
+          </p>
+        </div>
+      </div>
+
+      <p class="letter-sign">
+        Thân mến, Đức
+      </p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL PHÓNG TO BỨC ẢNH VỚI HOA NỞ XUNG QUANH HÌNH TRÁI TIM
+  ========================================================== -->
+  <div id="photo-lightbox" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close-btn" id="btn-close-lightbox" aria-label="Đóng ảnh">×</button>
+
+    <div class="lightbox-stage" id="lightbox-stage">
+      <div class="floral-frame-box">
+        <!-- Ảnh gốc được phóng to nằm chính giữa lòng trái tim hoa -->
+        <div class="enlarged-photo-wrap">
+          <img id="enlarged-img" src="" alt="" />
+        </div>
+
+        <!-- Hoa nở xung quanh tạo thành hình trái tim rực rỡ -->
+        <svg class="floral-border-svg" id="floral-border-svg" viewBox="0 0 500 500"></svg>
+      </div>
+
+      <!-- Tên người thân ở chính giữa bên dưới khung ảnh với font cách điệu màu đỏ hồng -->
+      <div class="enlarged-person-name" id="enlarged-person-name"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       JAVASCRIPT XỬ LÝ ĐỒ HỌA & LUỒNG TƯƠNG TÁC
+  ========================================================== -->
+  <script>
+    const $ = s => document.querySelector(s);
+
+    /* -----------------------------------------------------------
+       1. KHỞI TẠO 5 LOÀI HOA BẰNG SVG SYMBOL
+    ----------------------------------------------------------- */
+    const commonStem = `
+      <path d="M40 72 Q37 122 40 176" stroke="#649256" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      <path d="M40 130 q-24 -6 -28 -28 q22 2 28 28 z" fill="#81ad70"/>
+      <path d="M40 148 q22 -4 26 -24 q-20 0 -26 24 z" fill="#709c60"/>
+    `;
+
+    const rotatePetals = (n, fn) => Array.from({ length: n }, (_, i) => fn((i * 360) / n)).join('');
+
+    const FLOWERS = {
+      tulip: [
+        'Tulip',
+        `<path d="M20 22 Q18 66 40 72 Q62 66 60 22 L49 35 L40 13 L31 35 Z" fill="#e65c88"/>
+         <path d="M40 13 L31 35 Q34 60 40 72 Q46 60 49 35 Z" fill="#f596b5"/>`
+      ],
+      sunflower: [
+        'Hướng dương',
+        rotatePetals(12, a => `<ellipse cx="40" cy="10" rx="7" ry="14" fill="#f3b82b" transform="rotate(${a} 40 36)"/>`) +
+        `<circle cx="40" cy="36" r="13" fill="#7a4a24"/>
+         <circle cx="40" cy="36" r="7.5" fill="#5a3418"/>`
+      ],
+      rose: [
+        'Hoa hồng',
+        `<circle cx="40" cy="38" r="25" fill="#d93e75"/>
+         <circle cx="40" cy="38" r="18" fill="#ee6a98"/>
+         <path d="M28 38 a12 12 0 0 1 24 0 a8 8 0 0 1 -16 2 a4 4 0 0 1 7 -2" stroke="#fbb3cb" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+         <circle cx="40" cy="38" r="4" fill="#d93e75"/>`
+      ],
+      daisy: [
+        'Cúc nhỏ',
+        rotatePetals(10, a => `<ellipse cx="40" cy="15" rx="6" ry="14" fill="#ffffff" stroke="#e5dcc8" transform="rotate(${a} 40 38)"/>`) +
+        `<circle cx="40" cy="38" r="9.5" fill="#f3b82b"/>`
+      ],
+      baby: [
+        'Baby trắng',
+        `<path d="M40 72 L22 40 M40 72 L58 38 M40 72 L40 16 M31 54 L16 30 M49 52 L66 26" stroke="#8aa679" stroke-width="2.2" fill="none"/>` +
+        [[22,40],[58,38],[40,16],[16,30],[66,26],[30,28],[50,24],[10,44],[70,40],[24,18],[58,14]]
+          .map(([cx, cy]) => `<circle cx="${cx}" cy="${cy}" r="5.2" fill="#ffffff" stroke="#e2d9c5"/><circle cx="${cx}" cy="${cy}" r="1.6" fill="#ecc454"/>`)
+          .join('')
+      ]
+    };
+
+    const flowerKeys = Object.keys(FLOWERS);
+
+    $('#flower-defs').innerHTML = flowerKeys
+      .map(k => `<symbol id="f-${k}" viewBox="0 -8 80 180" overflow="visible">${FLOWERS[k][1]}${commonStem}</symbol>`)
+      .join('');
+
+    const useFlower = k => `<use href="#f-${k}" width="80" height="180"/>`;
+
+    /* -----------------------------------------------------------
+       2. KHỞI TẠO HIỆU ỨNG GIÓ THỔI HOA & LÁ (TRÊN-PHẢI -> DƯỚI-TRÁI)
+    ----------------------------------------------------------- */
+    const windContainer = $('#wind');
+    for (let i = 0; i < 22; i++) {
+      const item = document.createElement('i');
+      item.className = i % 3 !== 0 ? 'petal' : 'leaf';
+      item.style.cssText = `
+        left: ${25 + Math.random() * 85}vw;
+        top: ${-12 + Math.random() * 48}vh;
+        --d: ${8 + Math.random() * 7}s;
+        --s: ${9 + Math.random() * 10}px;
+        animation-delay: ${-Math.random() * 14}s;
+      `;
+      windContainer.appendChild(item);
+    }
+
+    /* -----------------------------------------------------------
+       3. GIAO DIỆN 1 -> GIAO DIỆN 2: MỞ CỬA VÀO TRONG (GIỮ NGUYÊN NGÔI NHÀ)
+    ----------------------------------------------------------- */
+    const s1 = $('#s1');
+    const s2 = $('#s2');
+    const s3 = $('#s3');
+    let doorOpened = false;
+
+    function openShopDoor() {
+      if (doorOpened) return;
+      doorOpened = true;
+
+      const stage = $('#shop-stage');
+      stage.classList.add('opening');
+
+      setTimeout(() => {
+        s1.style.transition = 'opacity 0.55s ease';
+        s1.style.opacity = '0';
+      }, 850);
+
+      setTimeout(() => {
+        s1.classList.remove('on');
+        s2.classList.add('on');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1400);
+    }
+
+    $('#door-hitbox-btn').addEventListener('click', openShopDoor);
+    $('#door-svg-group').addEventListener('click', openShopDoor);
+    $('#hint-door-btn').addEventListener('click', openShopDoor);
+
+    /* -----------------------------------------------------------
+       4. GIAO DIỆN 2: CHỌN HOA / RÚT HOA & XẾP HOA DÀY ĐẶN CHE CUỐNG XANH
+    ----------------------------------------------------------- */
+    const placeStemAt = (cx, cy, angle, scale) =>
+      `translate(${cx} ${cy}) rotate(${angle}) scale(${scale}) translate(-40 -172)`;
+
+    $('#bq-wrap').innerHTML = `
+      <svg id="bq2" class="bq-svg" viewBox="0 0 300 325">
+        <path d="M44 164 Q150 112 256 164 L182 246 L118 246 Z" fill="#dfc068"/>
+        <path d="M58 168 Q150 130 242 168 L178 244 L122 244 Z" fill="#f7e8b4"/>
+
+        <g class="foliage-base" opacity="0.9">
+          <ellipse cx="115" cy="175" rx="22" ry="12" fill="#6f9c5f" transform="rotate(-25 115 175)"/>
+          <ellipse cx="185" cy="175" rx="22" ry="12" fill="#6f9c5f" transform="rotate(25 185 175)"/>
+          <ellipse cx="150" cy="170" rx="26" ry="14" fill="#7ca96b"/>
+        </g>
+
+        <g class="fill-stems"></g>
+        <g class="main-stems"></g>
+
+        <g class="front-wrapper">
+          <path d="M42 162 Q115 208 175 244 L123 244 Q75 212 42 162 Z" fill="#f6e29c" stroke="#e4c974" stroke-width="1.2"/>
+          <path d="M258 162 Q185 208 125 244 L177 244 Q225 212 258 162 Z" fill="#efd47f" stroke="#dec065" stroke-width="1.2"/>
+          <path d="M42 162 Q150 226 258 162 L177 244 Q150 252 123 244 Z" fill="#f3dc8d"/>
+          <path d="M123 242 L177 242 L189 298 Q150 309 111 298 Z" fill="#eac96e" stroke="#dcb958" stroke-width="1.2"/>
+          <path d="M150 218 L131 298 M150 218 L169 298 M105 190 L136 296" stroke="#d8b452" stroke-width="1.6" fill="none" opacity="0.65"/>
+        </g>
+      </svg>
+    `;
+
+    $('#shelf').innerHTML = flowerKeys
+      .map((k, idx) => `
+        <button type="button" class="fl-btn" data-k="${k}" aria-pressed="false">
+          <svg class="sway" style="animation-delay: ${idx * 0.35}s" viewBox="0 -8 80 180">
+            ${useFlower(k)}
+          </svg>
+          <span>${FLOWERS[k][0]}</span>
+        </button>
+      `)
+      .join('');
+
+    const selectedList = [];
+    let isLocked = false;
+
+    function getBalancedLayout(count) {
+      const layouts = {
+        1: [
+          [
+            { cx: 150, cy: 222, angle: 0,   scale: 1.02 },
+            { cx: 136, cy: 252, angle: -18, scale: 0.92 },
+            { cx: 164, cy: 252, angle: 18,  scale: 0.92 }
+          ]
+        ],
+        2: [
+          [
+            { cx: 140, cy: 222, angle: -14, scale: 0.98 },
+            { cx: 162, cy: 254, angle: 16,  scale: 0.90 }
+          ],
+          [
+            { cx: 160, cy: 222, angle: 14,  scale: 0.98 },
+            { cx: 138, cy: 254, angle: -16, scale: 0.90 }
+          ]
+        ],
+        3: [
+          [
+            { cx: 150, cy: 218, angle: 0,   scale: 1.0 },
+            { cx: 150, cy: 258, angle: 4,   scale: 0.88 }
+          ],
+          [
+            { cx: 134, cy: 228, angle: -24, scale: 0.95 },
+            { cx: 168, cy: 254, angle: 20,  scale: 0.88 }
+          ],
+          [
+            { cx: 166, cy: 228, angle: 24,  scale: 0.95 },
+            { cx: 132, cy: 254, angle: -20, scale: 0.88 }
+          ]
+        ],
+        4: [
+          [
+            { cx: 142, cy: 218, angle: -10, scale: 0.98 },
+            { cx: 166, cy: 256, angle: 22,  scale: 0.86 }
+          ],
+          [
+            { cx: 158, cy: 218, angle: 10,  scale: 0.98 },
+            { cx: 134, cy: 256, angle: -22, scale: 0.86 }
+          ],
+          [
+            { cx: 128, cy: 232, angle: -30, scale: 0.92 },
+            { cx: 148, cy: 258, angle: -5,  scale: 0.88 }
+          ],
+          [
+            { cx: 172, cy: 232, angle: 30,  scale: 0.92 },
+            { cx: 154, cy: 258, angle: 8,   scale: 0.88 }
+          ]
+        ],
+        5: [
+          [
+            { cx: 150, cy: 215, angle: 0,   scale: 1.02 },
+            { cx: 150, cy: 258, angle: 0,   scale: 0.90 }
+          ],
+          [
+            { cx: 136, cy: 222, angle: -18, scale: 0.96 },
+            { cx: 168, cy: 255, angle: 18,  scale: 0.86 }
+          ],
+          [
+            { cx: 164, cy: 222, angle: 18,  scale: 0.96 },
+            { cx: 132, cy: 255, angle: -18, scale: 0.86 }
+          ],
+          [
+            { cx: 124, cy: 236, angle: -35, scale: 0.90 }
+          ],
+          [
+            { cx: 176, cy: 236, angle: 35,  scale: 0.90 }
+          ]
+        ]
+      };
+      return layouts[count] || [];
+    }
+
+    function renderSelectedBouquet(lastChangedKey, action) {
+      const mainContainer = $('#bq2 .main-stems');
+      const count = selectedList.length;
+
+      if (count === 0) {
+        mainContainer.innerHTML = '';
+        return;
+      }
+
+      const layoutForCount = getBalancedLayout(count);
+      mainContainer.innerHTML = selectedList
+        .map((flowerKey, index) => {
+          const stems = layoutForCount[index] || [];
+          const animClass = (action === 'add' && flowerKey === lastChangedKey) ? 'grow' : '';
+          return `
+            <g class="flower-group" data-k="${flowerKey}">
+              ${stems.map(pos => `
+                <g transform="${placeStemAt(pos.cx, pos.cy, pos.angle, pos.scale)}">
+                  <g class="${animClass}">${useFlower(flowerKey)}</g>
+                </g>
+              `).join('')}
+            </g>
+          `;
+        })
+        .join('');
+    }
+
+    function updateSelectionUI() {
+      const count = selectedList.length;
+      $('#btn-get-bouquet').disabled = count === 0;
+      $('#bq-status').textContent = count > 0
+        ? `Đã chọn ${count} / 5 loài hoa.`
+        : 'Bó hoa đang chờ những điều dịu dàng.';
+    }
+
+    $('#shelf').addEventListener('click', e => {
+      const btn = e.target.closest('.fl-btn');
+      if (!btn || isLocked) return;
+
+      const key = btn.dataset.k;
+      const existingIdx = selectedList.indexOf(key);
+
+      if (existingIdx !== -1) {
+        selectedList.splice(existingIdx, 1);
+        btn.classList.remove('sel');
+        btn.setAttribute('aria-pressed', 'false');
+
+        const groupNode = document.querySelector(`#bq2 .main-stems [data-k="${key}"]`);
+        if (groupNode) {
+          groupNode.querySelectorAll('g').forEach(g => g.classList.add('pull'));
+          setTimeout(() => {
+            renderSelectedBouquet(key, 'remove');
+          }, 380);
+        } else {
+          renderSelectedBouquet(key, 'remove');
+        }
+      } else {
+        selectedList.push(key);
+        btn.classList.add('sel');
+        btn.setAttribute('aria-pressed', 'true');
+        renderSelectedBouquet(key, 'add');
+      }
+
+      updateSelectionUI();
+    });
+
+    /* -----------------------------------------------------------
+       5. GIAO DIỆN 2 -> GIAO DIỆN 3: CHÈN THÊM HOA DÀY ĐẶN CHE KÍN CÀNH XANH
+    ----------------------------------------------------------- */
+    const denseExtraPositions = [
+      { cx: 126, cy: 218, angle: -32, scale: 0.90 },
+      { cx: 174, cy: 218, angle: 32,  scale: 0.90 },
+      { cx: 138, cy: 210, angle: -12, scale: 0.94 },
+      { cx: 162, cy: 210, angle: 12,  scale: 0.94 },
+      { cx: 122, cy: 256, angle: -28, scale: 0.88 },
+      { cx: 178, cy: 256, angle: 28,  scale: 0.88 },
+      { cx: 138, cy: 262, angle: -12, scale: 0.92 },
+      { cx: 162, cy: 262, angle: 12,  scale: 0.92 },
+      { cx: 150, cy: 265, angle: 0,   scale: 0.95 }
+    ];
+
+    $('#btn-get-bouquet').addEventListener('click', () => {
+      if (selectedList.length === 0 || isLocked) return;
+      isLocked = true;
+      $('#btn-get-bouquet').disabled = true;
+      $('#bq-status').textContent = 'Đức đang cắm thêm hoa cho bó hoa thật đầy đặn...';
+
+      const backExtras = denseExtraPositions.slice(0, 4);
+      const frontCoverExtras = denseExtraPositions.slice(4);
+
+      $('#bq2 .fill-stems').innerHTML = backExtras
+        .map((pos, idx) => `
+          <g transform="${placeStemAt(pos.cx, pos.cy, pos.angle, pos.scale)}">
+            <g class="grow" style="animation-delay: ${idx * 0.1}s">
+              ${useFlower(selectedList[idx % selectedList.length])}
+            </g>
+          </g>
+        `)
+        .join('');
+
+      const frontHTML = frontCoverExtras
+        .map((pos, idx) => `
+          <g transform="${placeStemAt(pos.cx, pos.cy, pos.angle, pos.scale)}">
+            <g class="grow" style="animation-delay: ${(idx + 2) * 0.1}s">
+              ${useFlower(selectedList[(idx + 1) % selectedList.length])}
+            </g>
+          </g>
+        `)
+        .join('');
+
+      $('#bq2 .main-stems').insertAdjacentHTML('beforeend', frontHTML);
+
+      setTimeout(transitionToScreen3, 1650);
+    });
+
+    function transitionToScreen3() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const oldRect = $('#bq2').getBoundingClientRect();
+      const cloneBq = $('#bq2').cloneNode(true);
+      cloneBq.id = 'bq3';
+
+      cloneBq.querySelectorAll('.grow, .pull').forEach(el => el.classList.remove('grow', 'pull'));
+
+      $('#s3-hold').prepend(cloneBq);
+
+      s3.classList.add('on');
+      s2.classList.add('out');
+      $('#bq-wrap').style.visibility = 'hidden';
+
+      const newRect = cloneBq.getBoundingClientRect();
+      const scaleRatio = oldRect.width / newRect.width;
+      const deltaX = oldRect.left + oldRect.width / 2 - (newRect.left + newRect.width / 2);
+      const deltaY = oldRect.top + oldRect.height / 2 - (newRect.top + newRect.height / 2);
+
+      cloneBq.style.transition = 'none';
+      cloneBq.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(${scaleRatio})`;
+      cloneBq.getBoundingClientRect();
+
+      s3.style.transition = 'opacity 0.65s ease';
+      s3.style.opacity = '1';
+
+      requestAnimationFrame(() => {
+        cloneBq.style.transition = 'transform 1.15s cubic-bezier(0.25, 0.85, 0.25, 1)';
+        cloneBq.style.transform = 'none';
+      });
+
+      setTimeout(() => {
+        s2.classList.remove('on', 'out');
+      }, 900);
+    }
+
+    /* -----------------------------------------------------------
+       6. GIAO DIỆN 3: CHẠM DẢI RUY BĂNG UỐN LƯỢN -> HIỆN NƠ & THIỆP NHỎ
+    ----------------------------------------------------------- */
+    function tieRibbonBow() {
+      const band = $('#ribbon-band');
+      if (band.classList.contains('gone')) return;
+
+      band.classList.add('gone');
+
+      $('#final-bow').classList.add('on');
+      $('#mini-tag').classList.add('on');
+
+      $('#s3-title').innerHTML = `
+        Một bó hoa xinh,<br />
+        cho những người thân <span class="highlight-script">đáng quý nhất.</span>
+      `;
+      $('#s3-hint').textContent = 'Có một tấm thiệp nhỏ ngay cạnh chiếc nơ gửi đến mọi người.';
+    }
+
+    $('#ribbon-band').addEventListener('click', tieRibbonBow);
+    $('#ribbon-band').addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        tieRibbonBow();
+      }
+    });
+
+    /* -----------------------------------------------------------
+       7. GIAO DIỆN 4: MỞ THIỆP & HIỂN THỊ 13 BỨC ẢNH NGƯỜI THÂN
+    ----------------------------------------------------------- */
+    const memberNames = [
+      'Bà Vân',
+      'Mẹ Thắm',
+      'Mự Hiền',
+      'Mự Giang',
+      'Em Hoa',
+      'Em Milk',
+      'Bà Dung',
+      'Dì Thủy',
+      'Mự Bích',
+      'Chị Hằng',
+      'Chị Chi',
+      'Chị Ngọc',
+      'Bạn Vân'
+    ];
+
+    const photosGrid = $('#photos-grid-13');
+
+    const fallbackAvatar = `data:image/svg+xml;utf8,` + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <rect width="100" height="100" fill="#f5e6e8"/>
+        <circle cx="50" cy="38" r="18" fill="#e08dac"/>
+        <path d="M22 88 C22 65, 78 65, 78 88 Z" fill="#e08dac"/>
+      </svg>
+    `);
+
+    photosGrid.innerHTML = memberNames
+      .map((memberName, idx) => {
+        const num = String(idx + 1).padStart(2, '0');
+        const fileName = `hinh${num}.jpg`;
+        return `
+          <div class="mini-polaroid" data-name="${memberName}" data-src="${fileName}" title="${memberName}">
+            <span class="member-name-tooltip">${memberName}</span>
+            <img src="${fileName}" alt="${memberName}" onerror="this.onerror=null; this.src='${fallbackAvatar}';" />
+          </div>
+        `;
+      })
+      .join('');
+
+    /* -----------------------------------------------------------
+       8. CLICK VÀO 1 NGƯỜI -> MỞ ẢNH PHÓNG TO VỚI HOA NỞ HÌNH TRÁI TIM
+    ----------------------------------------------------------- */
+    function generateFloralBorderSVG() {
+      const items = [];
+      const mainFlowers = ['w-rose', 'w-sunflower', 'w-daisy', 'w-tulip'];
+
+      // 1. Vòng hoa chính tạo đường viền HÌNH TRÁI TIM rõ nét (Khe tim trên ở (250, 96), 2 bầu tim vươn cao lên y=46, và mũi tim nhọn ở (250, 466))
+      const outerHeartPoints = [
+        { x: 250, y: 96,  size: 42 }, // Khe lõm giữa đỉnh trái tim
+        // Bầu tim bên trái & cánh trái vát xuống mũi tim
+        { x: 220, y: 74,  size: 45 },
+        { x: 186, y: 54,  size: 48 },
+        { x: 148, y: 46,  size: 50 },
+        { x: 110, y: 56,  size: 50 },
+        { x: 78,  y: 80,  size: 48 },
+        { x: 58,  y: 114, size: 48 },
+        { x: 50,  y: 154, size: 48 },
+        { x: 54,  y: 196, size: 46 },
+        { x: 66,  y: 238, size: 46 },
+        { x: 84,  y: 278, size: 46 },
+        { x: 108, y: 316, size: 45 },
+        { x: 136, y: 354, size: 45 },
+        { x: 168, y: 390, size: 45 },
+        { x: 206, y: 428, size: 46 },
+        // Mũi nhọn đáy trái tim
+        { x: 250, y: 466, size: 52 },
+        // Cánh phải từ mũi tim lên bầu tim bên phải
+        { x: 294, y: 428, size: 46 },
+        { x: 332, y: 390, size: 45 },
+        { x: 364, y: 354, size: 45 },
+        { x: 392, y: 316, size: 45 },
+        { x: 416, y: 278, size: 46 },
+        { x: 434, y: 238, size: 46 },
+        { x: 446, y: 196, size: 46 },
+        { x: 450, y: 154, size: 48 },
+        { x: 442, y: 114, size: 48 },
+        { x: 422, y: 80,  size: 48 },
+        { x: 390, y: 56,  size: 50 },
+        { x: 352, y: 46,  size: 50 },
+        { x: 314, y: 54,  size: 48 },
+        { x: 280, y: 74,  size: 45 }
+      ];
+
+      // 2. Lớp hoa đệm bên trong ôm vừa khít viền ảnh (lấp đầy phần bầu tim và mũi tim để không có khoảng trống, nhưng không lấn sâu vào ảnh)
+      const innerCushionPoints = [
+        // Ôm dọc viền trên của ảnh & lấp đầy 2 bầu tim
+        { x: 218, y: 88,  size: 38 },
+        { x: 184, y: 82,  size: 42 },
+        { x: 148, y: 82,  size: 44 },
+        { x: 118, y: 94,  size: 42 },
+        { x: 282, y: 88,  size: 38 },
+        { x: 316, y: 82,  size: 42 },
+        { x: 352, y: 82,  size: 44 },
+        { x: 382, y: 94,  size: 42 },
+        // Ôm dọc 2 bên sườn ảnh
+        { x: 96,  y: 124, size: 42 },
+        { x: 92,  y: 162, size: 42 },
+        { x: 92,  y: 200, size: 42 },
+        { x: 96,  y: 238, size: 42 },
+        { x: 110, y: 276, size: 42 },
+        { x: 132, y: 312, size: 42 },
+        { x: 162, y: 342, size: 42 },
+        { x: 198, y: 364, size: 42 },
+        { x: 404, y: 124, size: 42 },
+        { x: 408, y: 162, size: 42 },
+        { x: 408, y: 200, size: 42 },
+        { x: 404, y: 238, size: 42 },
+        { x: 390, y: 276, size: 42 },
+        { x: 368, y: 312, size: 42 },
+        { x: 338, y: 342, size: 42 },
+        { x: 302, y: 364, size: 42 },
+        // Đệm đầy phần chóp dưới của trái tim
+        { x: 250, y: 374, size: 44 },
+        { x: 222, y: 396, size: 44 },
+        { x: 278, y: 396, size: 44 },
+        { x: 250, y: 422, size: 46 }
+      ];
+
+      // Lớp 1: Lá xanh tỏa ra ngoài theo đường viền trái tim
+      outerHeartPoints.forEach((pt, idx) => {
+        const angleOut = Math.atan2(pt.y - 230, pt.x - 250) * (180 / Math.PI) + 90;
+        const leafX = pt.x + Math.cos((angleOut - 90) * Math.PI / 180) * 10;
+        const leafY = pt.y + Math.sin((angleOut - 90) * Math.PI / 180) * 10;
+        items.push({
+          type: 'w-leaf',
+          x: leafX,
+          y: leafY,
+          rot: angleOut,
+          size: 46,
+          delay: (idx * 0.015).toFixed(3)
+        });
+      });
+
+      // Lớp 2: Hoa đệm bên trong che viền khung ảnh và làm đầy dáng trái tim
+      innerCushionPoints.forEach((pt, idx) => {
+        const flType = mainFlowers[(idx + 1) % mainFlowers.length];
+        items.push({
+          type: flType,
+          x: pt.x,
+          y: pt.y,
+          rot: (idx * 37) % 360,
+          size: pt.size,
+          delay: (0.06 + idx * 0.016).toFixed(3)
+        });
+      });
+
+      // Lớp 3: Hoa chính nở rộ trên đường viền hình trái tim
+      outerHeartPoints.forEach((pt, idx) => {
+        const flType = mainFlowers[idx % mainFlowers.length];
+        items.push({
+          type: flType,
+          x: pt.x,
+          y: pt.y,
+          rot: (idx * 29) % 360,
+          size: pt.size,
+          delay: (0.12 + idx * 0.018).toFixed(3)
+        });
+      });
+
+      // Lớp 4: Hoa Baby trắng điểm xuyết giữa các khe hoa tạo độ dày mềm mại
+      outerHeartPoints.forEach((pt, idx) => {
+        const nextPt = outerHeartPoints[(idx + 1) % outerHeartPoints.length];
+        const midX = (pt.x + nextPt.x) / 2;
+        const midY = (pt.y + nextPt.y) / 2;
+        items.push({
+          type: 'w-baby',
+          x: midX,
+          y: midY,
+          rot: (idx * 45) % 360,
+          size: 38,
+          delay: (0.22 + idx * 0.015).toFixed(3)
+        });
+      });
+
+      return items
+        .map(it => {
+          const half = it.size / 2;
+          return `
+            <g transform="translate(${it.x.toFixed(1)} ${it.y.toFixed(1)}) rotate(${it.rot.toFixed(1)})">
+              <g class="bloom-node" style="animation-delay: ${it.delay}s">
+                <use href="#${it.type}" x="${-half}" y="${-half}" width="${it.size}" height="${it.size}"/>
+              </g>
+            </g>
+          `;
+        })
+        .join('');
+    }
+
+    function openPhotoLightbox(personName, imgSrc) {
+      const enlargedImg = $('#enlarged-img');
+      enlargedImg.onerror = function () {
+        this.onerror = null;
+        this.src = fallbackAvatar;
+      };
+      enlargedImg.src = imgSrc;
+      enlargedImg.alt = personName;
+
+      $('#enlarged-person-name').textContent = personName;
+
+      // Vẽ lại khung hoa hình trái tim để kích hoạt hiệu ứng hoa nở từ đầu mỗi lần mở ảnh
+      $('#floral-border-svg').innerHTML = generateFloralBorderSVG();
+
+      $('#photo-lightbox').classList.add('on');
+    }
+
+    function closePhotoLightbox() {
+      $('#photo-lightbox').classList.remove('on');
+    }
+
+    photosGrid.addEventListener('click', e => {
+      const card = e.target.closest('.mini-polaroid');
+      if (!card) return;
+      openPhotoLightbox(card.dataset.name, card.dataset.src);
+    });
+
+    $('#btn-close-lightbox').addEventListener('click', closePhotoLightbox);
+
+    // Ấn vào vùng trống phía ngoài bức ảnh thì tự động đóng bức ảnh lại
+    $('#photo-lightbox').addEventListener('click', e => {
+      if (!e.target.closest('.enlarged-photo-wrap') && !e.target.closest('.enlarged-person-name')) {
+        closePhotoLightbox();
+      }
+    });
+
+    $('#btn-open-letter').addEventListener('click', () => {
+      $('#letter-modal').classList.add('on');
+    });
+
+    $('#btn-close-letter').addEventListener('click', () => {
+      $('#letter-modal').classList.remove('on');
+    });
+
+    $('#letter-modal').addEventListener('click', e => {
+      if (e.target.id === 'letter-modal') {
+        $('#letter-modal').classList.remove('on');
+      }
+    });
+
+    /* -----------------------------------------------------------
+       9. NÚT TRÒN RESTART LẠI TOÀN BỘ QUÁ TRÌNH TỪ ĐẦU
+    ----------------------------------------------------------- */
+    function restartExperience() {
+      closePhotoLightbox();
+      $('#letter-modal').classList.remove('on');
+
+      doorOpened = false;
+      $('#shop-stage').classList.remove('opening');
+
+      selectedList.length = 0;
+      isLocked = false;
+      document.querySelectorAll('.fl-btn').forEach(btn => {
+        btn.classList.remove('sel');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      $('#bq2 .main-stems').innerHTML = '';
+      $('#bq2 .fill-stems').innerHTML = '';
+      $('#bq-wrap').style.visibility = 'visible';
+      updateSelectionUI();
+
+      const clonedBq = $('#bq3');
+      if (clonedBq) clonedBq.remove();
+      $('#ribbon-band').classList.remove('gone');
+      $('#final-bow').classList.remove('on');
+      $('#mini-tag').classList.remove('on');
+      $('#s3-title').innerHTML = `
+        Thắt một chiếc nơ,<br />
+        gửi trọn <span class="highlight-script">niềm vui.</span>
+      `;
+      $('#s3-hint').textContent = 'Chạm vào dải ruy băng để hoàn thành bó hoa.';
+
+      s2.classList.remove('on', 'out');
+      s3.classList.remove('on', 'out');
+      s3.style.opacity = '0';
+
+      s1.style.transition = 'opacity 0.45s ease';
+      s1.style.opacity = '1';
+      s1.classList.add('on');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    $('#btn-restart-all').addEventListener('click', restartExperience);
+  </script>
+</body>
+</html>
